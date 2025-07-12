@@ -33,9 +33,9 @@ def main():
     print(f"Found {word_count} total words")
     print("--------- Character Count -------")
 
-    for letter in sorted_word_dict:
-        if(letter[0].isalpha()):
-            print(f"{letter[0]}: {letter[1]}")
+    for letter, count in sorted_word_dict:
+        if(letter.isalpha()):
+            print(f"{letter}: {count}")
 
     print("============= END ===============")
 
