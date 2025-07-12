@@ -8,7 +8,7 @@ def get_book_text(filepath):
     with open(filepath) as f:
         file_contents = f.read()
         return file_contents
-
+    raise Exception()
 
 def main():
 
@@ -17,8 +17,12 @@ def main():
         sys.exit(1)
     
     book = sys.argv[1]
-
-    text = get_book_text(book)
+    try:
+        text = get_book_text(book)
+    except Exception as e:
+        print(e)
+        sys.exit(1)
+        
     word_count = get_num_words(text)
     word_dict = word_stats(text)
     sorted_word_dict = sort_on(word_dict)
